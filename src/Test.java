@@ -2,5 +2,9 @@
 public class Test {
  
 	int id =0;
-	apr isch gay
+	
+	private void aprischgay()
+	{
+		System.out.println("Wir schaffen des nia");
+	}
 }
