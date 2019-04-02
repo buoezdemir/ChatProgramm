@@ -7,4 +7,9 @@ public class Test {
 	{
 		System.out.println("Geat des ???????");
 	}
+	
+	public void methode1()
+	{
+		
+	}
 }
