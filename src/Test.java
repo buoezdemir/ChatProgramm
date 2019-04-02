@@ -5,6 +5,6 @@ public class Test {
 	
 	private void aprischgay()
 	{
-		System.out.println("Wir schaffen des gar nia nia           Ita nita");
+		System.out.println("Geat des ???????");
 	}
 }
