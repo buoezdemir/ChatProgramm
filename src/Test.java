@@ -5,6 +5,11 @@ public class Test {
 	
 	private void aprischgay()
 	{
-		System.out.println("Geat des ???????");
+		System.out.println("Geat des ??????? NA!");
+	}
+	
+	public void methode1()
+	{
+		
 	}
 }
