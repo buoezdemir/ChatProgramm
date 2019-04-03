@@ -20,7 +20,7 @@ public void startListening() {
 		public void run() {
 			try {
 			ServerSocket serverSocket = new ServerSocket(port);
-			Socket remoteClientSocket = serverSocket.accept();
+			Socket remoteClientSocket = serverSocket.accept( );
 			}
 			
 		}
