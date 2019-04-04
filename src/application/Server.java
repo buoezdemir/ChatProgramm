@@ -4,7 +4,7 @@ import java.net.Socket;
 public class Server {
 
 	public static void main(String[] args) {
-
+Server server = new Server(8000)
 	}
 
 	private int port;
@@ -24,8 +24,13 @@ public void startListening() {
 			
 			Scanner scan = new Scanner(new Buffered Reader(new InputStreamReader(remoteClientSocket.getInputStream())))
 			if(s.hasNextLine()) {
-				System.
+				System.out.println("Nachricht: "+ s.nextLine());
 			}
+			s.close();
+			remoteClientSocket.close();
+			ServerSocket.close();
+			} catch(Exeption e) {
+				e.printStackTrace();
 			}
 			}
 
