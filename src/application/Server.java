@@ -23,7 +23,9 @@ public void startListening() {
 			Socket remoteClientSocket = serverSocket.accept();
 			
 			Scanner scan = new Scanner(new Buffered Reader(new InputStreamReader(remoteClientSocket.getInputStream())))
-			if(s.)
+			if(s.hasNextLine()) {
+				System.
+			}
 			}
 			}
 
