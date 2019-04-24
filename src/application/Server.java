@@ -1,41 +1,41 @@
-import java.net.ServerSocket;
-import java.net.Socket;
-
-public class Server {
-
-	public static void main(String[] args) {
-Server server = new Server(8000)
-	}
-
-	private int port;
-
-	public Server(int port) {
-		super();
-		this.port = port;
-	}
-public void startListening() {
-	new Thread(new Runnable() {
-		
-		@Override
-		public void run() {
-			try {
-			ServerSocket serverSocket = new ServerSocket(port);
-			Socket remoteClientSocket = serverSocket.accept();
-			
-			Scanner scan = new Scanner(new Buffered Reader(new InputStreamReader(remoteClientSocket.getInputStream())))
-			if(s.hasNextLine()) {
-				System.out.println("Nachricht: "+ s.nextLine());
-			}
-			s.close();
-			remoteClientSocket.close();
-			ServerSocket.close();
-			} catch(Exeption e) {
-				e.printStackTrace();
-			}
-			}
-
-		}
-	})
-	
-}
+import java.io.*;
+import java.net.*;
+ 
+class Server
+{
+   public static void main(String argv[]) throws Exception
+      {
+ 
+   		 System.out.println(" Server is Running  " );
+         ServerSocket mysocket = new ServerSocket(5555);
+ 
+         while(true)
+         {
+            Socket connectionSocket = mysocket.accept();
+ 
+            BufferedReader reader =
+            		new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+            BufferedWriter writer= 
+            		new BufferedWriter(new OutputStreamWriter(connectionSocket.getOutputStream()));
+ 
+            writer.write("*** Welcome to the Calculation Server (Addition Only) ***\r\n");            
+            writer.write("*** Please type in the first number and press Enter : \n");
+            writer.flush();
+            String data1 = reader.readLine().trim();
+ 
+            writer.write("*** Please type in the second number and press Enter : \n");
+            writer.flush();
+            String data2 = reader.readLine().trim();
+ 
+            int num1=Integer.parseInt(data1);
+            int num2=Integer.parseInt(data2);
+ 
+            int result=num1+num2;            
+            System.out.println("Addition operation done " );
+ 
+            writer.write("\r\n=== Result is  : "+result);
+            writer.flush();
+            connectionSocket.close();
+         }
+      }
 }
