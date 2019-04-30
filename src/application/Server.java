@@ -3,7 +3,7 @@ import java.net.*;
  
 class Server
 {
-   public static void main(String argv[]) throws Exception
+   public static void run throws Exception
       {
  
    		 System.out.println(" Server wurde gestartet  " );
@@ -20,6 +20,13 @@ class Server
  
             writer.write("*** Willkommen zum Chat  ***\r\n");
             writer.flush();
+            String nachricht;
+            while ((nachricht = reader.readLine()) != null) {
+				writer.write(nachricht + "\n");
+				writer.flush();
+				System.out.println("Empfangen vom Client : " + nachricht);+
+
+			}
             connectionSocket.close();
          }
       }
