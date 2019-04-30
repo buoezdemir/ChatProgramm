@@ -1,6 +1,6 @@
 import java.io.*;
 import java.net.*;
-import java.util.*;
+import java.util.Scanner;
  
 public class Client {
  
@@ -8,20 +8,20 @@ public class Client {
       {
 	   try{
 		    Socket socketClient= new Socket("localhost",5555);
-		    System.out.println("Client: "+"Connection Established");
- 
+		    System.out.println("Clientwurde gestartet");
+//Reader & Writer
 		    BufferedReader reader = 
-		    		new BufferedReader(new InputStreamReader(socketClient.getInputStream()));
- 
+		    new BufferedReader(new InputStreamReader(socketClient.getInputStream()));
 		    BufferedWriter writer= 
-	        		new BufferedWriter(new OutputStreamWriter(socketClient.getOutputStream()));
+	        new BufferedWriter(new OutputStreamWriter(socketClient.getOutputStream()));
+		    
 		    String serverMsg;
-		    writer.write("8\r\n");
-		    writer.write("10\r\n");
             writer.flush();
 			while((serverMsg = reader.readLine()) != null){
 				System.out.println("Client: " + serverMsg);
 			}
+			reader.close();
+			writer.close();
  
 	   }catch(Exception e){e.printStackTrace();}
       }
